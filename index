@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unclause — Support</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f0f14;
+    --bg: #f7f6f2;
+    --accent: #2a5cff;
+    --accent2: #ff4d2e;
+    --muted: #7a7a8a;
+    --card: #ffffff;
+    --border: #e8e6e0;
+    --radius: 16px;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(247,246,242,0.88);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+  }
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800; font-size: 1.25rem;
+    color: var(--ink); text-decoration: none;
+    letter-spacing: -0.02em;
+  }
+  .nav-logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.875rem; font-weight: 500;
+    color: var(--muted); text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--ink); }
+
+  /* HERO */
+  .hero {
+    max-width: 760px; margin: 0 auto;
+    padding: 80px 2rem 48px;
+    text-align: center;
+  }
+  .hero-tag {
+    display: inline-block;
+    font-family: 'Syne', sans-serif;
+    font-size: 0.7rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--accent);
+    border: 1.5px solid var(--accent);
+    border-radius: 999px;
+    padding: 4px 14px; margin-bottom: 24px;
+  }
+  .hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2.4rem, 6vw, 3.8rem);
+    font-weight: 800; line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 20px;
+  }
+  .hero h1 em { font-style: normal; color: var(--accent); }
+  .hero p {
+    font-size: 1.1rem; color: var(--muted);
+    max-width: 520px; margin: 0 auto;
+    font-weight: 300;
+  }
+
+  /* CONTACT STRIP */
+  .contact-strip {
+    display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+    padding: 0 2rem 64px;
+    max-width: 760px; margin: 0 auto;
+  }
+  .contact-card {
+    flex: 1; min-width: 220px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    text-align: center;
+    text-decoration: none; color: inherit;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-top: 32px;
+  }
+  .contact-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(42,92,255,0.1);
+  }
+  .contact-card .icon {
+    font-size: 2rem; margin-bottom: 10px; display: block;
+  }
+  .contact-card strong {
+    display: block;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700; font-size: 1rem;
+    margin-bottom: 4px;
+  }
+  .contact-card span { font-size: 0.875rem; color: var(--muted); }
+
+  /* MAIN */
+  main {
+    max-width: 760px; margin: 0 auto;
+    padding: 0 2rem 80px;
+    display: flex; flex-direction: column; gap: 12px;
+  }
+
+  /* ACCORDION */
+  details {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  details + details { margin-top: 0; }
+  details summary {
+    padding: 22px 28px;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: space-between;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700; font-size: 1rem;
+    letter-spacing: -0.01em;
+    list-style: none;
+    transition: background 0.15s;
+  }
+  details summary:hover { background: #fafaf8; }
+  details summary::-webkit-details-marker { display: none; }
+  details summary::after {
+    content: '+';
+    font-size: 1.4rem; font-weight: 300;
+    color: var(--accent);
+    transition: transform 0.2s;
+    flex-shrink: 0; margin-left: 16px;
+  }
+  details[open] summary::after {
+    transform: rotate(45deg);
+  }
+  details[open] summary {
+    border-bottom: 1px solid var(--border);
+  }
+  .details-body {
+    padding: 24px 28px;
+    color: #444;
+    font-weight: 300;
+    font-size: 0.95rem;
+  }
+  .details-body p + p { margin-top: 12px; }
+  .details-body ol, .details-body ul {
+    padding-left: 20px; margin-top: 12px;
+  }
+  .details-body li { margin-bottom: 8px; }
+  .details-body a { color: var(--accent); }
+
+  /* SECTION LABEL */
+  .section-label {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.7rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--muted);
+    padding: 32px 0 12px;
+  }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 32px 2rem;
+    text-align: center;
+    font-size: 0.8rem; color: var(--muted);
+  }
+  footer a { color: var(--muted); text-decoration: underline; }
+  footer a:hover { color: var(--ink); }
+  .footer-links { display: flex; gap: 2rem; justify-content: center; margin-bottom: 12px; flex-wrap: wrap; }
+
+  @media (max-width: 600px) {
+    .nav-links { display: none; }
+    .hero { padding: 48px 1.5rem 32px; }
+    main { padding: 0 1.5rem 60px; }
+    .contact-strip { padding: 0 1.5rem 48px; }
+    details summary { padding: 18px 20px; }
+    .details-body { padding: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">Uncl<span>au</span>se</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Support</a></li>
+    <li><a href="privacy.html">Privacy</a></li>
+    <li><a href="terms.html">Terms</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="hero-tag">Help Center</div>
+  <h1>How can we <em>help</em> you?</h1>
+  <p>Find answers to common questions or reach out directly — we usually respond within 24 hours.</p>
+</div>
+
+<div class="contact-strip">
+  <a class="contact-card" href="mailto:karabetskiy.d@gmail.com?subject=Unclause%20Support&body=Hi%2C%20I%20need%20help%20with...">
+    <span class="icon">✉️</span>
+    <strong>Email Support</strong>
+    <span>karabetskiy.d@gmail.com</span>
+  </a>
+</div>
+
+<main>
+  <div class="section-label">Getting Started</div>
+
+  <details open>
+    <summary>How do I analyze a contract?</summary>
+    <div class="details-body">
+      <p>There are three ways to upload a contract:</p>
+      <ol>
+        <li><strong>Camera</strong> — take one or multiple photos of your printed contract. Unclause stitches the pages together automatically.</li>
+        <li><strong>PDF</strong> — import any PDF from your Files app, iCloud, or any other source.</li>
+        <li><strong>Text</strong> — paste contract text directly into the app.</li>
+      </ol>
+      <p>After uploading, select your role (tenant, contractor, employer, buyer, etc.) and tap <strong>Analyze</strong>. Your report will be ready in seconds.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>What is a "role" and why does it matter?</summary>
+    <div class="details-body">
+      <p>Claude AI analyzes the contract strictly from your perspective. If you're a <strong>tenant</strong>, it flags clauses that are unfair to tenants. If you're a <strong>contractor</strong>, it focuses on payment terms, liability, and IP clauses that affect you.</p>
+      <p>Choosing the right role ensures the analysis is relevant and actionable for your situation.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>What is Quick Check vs Full Analysis?</summary>
+    <div class="details-body">
+      <p><strong>Quick Check</strong> — a fast scan that highlights the most critical risks. Good for a first pass on a short document.</p>
+      <p><strong>Full Analysis</strong> — a thorough review of every clause with detailed explanations, suggested rewrites, and a complete risk score. Recommended before signing anything important.</p>
+    </div>
+  </details>
+
+  <div class="section-label">Credits & Billing</div>
+
+  <details>
+    <summary>How does the credit system work?</summary>
+    <div class="details-body">
+      <p>Each analysis consumes credits based on document length:</p>
+      <ul>
+        <li>Up to 5 pages → <strong>1 credit</strong></li>
+        <li>6–15 pages → <strong>2 credits</strong></li>
+        <li>16–30 pages → <strong>3 credits</strong></li>
+        <li>Comparing two contracts → <strong>1–2 credits</strong> (based on total pages)</li>
+        <li>Language version comparison → <strong>1 credit</strong></li>
+      </ul>
+      <p>New users receive <strong>2 free credits</strong> to try the app. Additional credits can be purchased in-app.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>I was charged credits but the analysis failed. What happens?</summary>
+    <div class="details-body">
+      <p>If an analysis fails due to a technical error, your credits are automatically refunded. You should see them restored immediately. If that doesn't happen, please email us at <a href="mailto:karabetskiy.d@gmail.com">karabetskiy.d@gmail.com</a> with details of the issue.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>Can I get a refund for purchased credits?</summary>
+    <div class="details-body">
+      <p>All purchases are processed through Apple's App Store. To request a refund, please use Apple's standard refund process:</p>
+      <ol>
+        <li>Go to <a href="https://reportaproblem.apple.com" target="_blank">reportaproblem.apple.com</a></li>
+        <li>Sign in with your Apple ID</li>
+        <li>Find the Unclause purchase and select "Request a refund"</li>
+      </ol>
+      <p>We cannot process refunds directly — Apple handles all billing.</p>
+    </div>
+  </details>
+
+  <div class="section-label">Privacy & Security</div>
+
+  <details>
+    <summary>Is my contract data stored on your servers?</summary>
+    <div class="details-body">
+      <p>No. Your documents are <strong>never stored on our servers</strong>. Contract text is sent securely to Anthropic's API for analysis and is not retained after the response is received.</p>
+      <p>Your reports and history are stored locally on your device and optionally synced to your personal iCloud account via CloudKit — only you have access.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>Does Unclause use Face ID / Touch ID?</summary>
+    <div class="details-body">
+      <p>Yes. You can enable biometric lock in Settings. When active, the app locks automatically when you switch away from it, and requires Face ID or Touch ID to resume. This protects your contract history if someone else picks up your phone.</p>
+    </div>
+  </details>
+
+  <div class="section-label">Features</div>
+
+  <details>
+    <summary>How does the language version comparison work?</summary>
+    <div class="details-body">
+      <p>If Unclause detects that your contract is written in two or more languages (e.g. English and Spanish), a banner will appear in your report offering a language comparison. This feature checks whether the different language versions say the same thing — a common source of legal disputes in international contracts.</p>
+      <p>The result is saved to your report and can be accessed anytime via the 🌐 button in the toolbar.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>How do I compare two contracts?</summary>
+    <div class="details-body">
+      <p>Go to <strong>History</strong> and tap <strong>Compare Two Contracts</strong>. Select two previously analyzed contracts from the dropdowns. Unclause will generate a side-by-side comparison highlighting key differences, risk changes, and recommendations.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>Can I export my report?</summary>
+    <div class="details-body">
+      <p>Yes — tap the share icon in any report to export a PDF version. You can save it to Files, send it to your lawyer, or share it via any app on your device.</p>
+    </div>
+  </details>
+
+  <div class="section-label">Troubleshooting</div>
+
+  <details>
+    <summary>The analysis is taking too long. What should I do?</summary>
+    <div class="details-body">
+      <p>Analysis time depends on document length and network speed. Typical analysis takes 10–30 seconds. For large documents (30+ pages), it may take up to a minute.</p>
+      <p>If it seems stuck: close and reopen the app. Your credits are only consumed once an analysis completes successfully.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>OCR isn't recognizing text from my photo correctly.</summary>
+    <div class="details-body">
+      <p>For best OCR results:</p>
+      <ul>
+        <li>Ensure good lighting — avoid shadows across the page</li>
+        <li>Hold the camera steady and parallel to the document</li>
+        <li>Capture the full page including margins</li>
+        <li>Use the PDF option if you have a digital version of the contract</li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
+    <summary>The app crashed or something isn't working right.</summary>
+    <div class="details-body">
+      <p>Try these steps first:</p>
+      <ol>
+        <li>Force-quit the app and relaunch it</li>
+        <li>Check that your iOS version is 17.0 or later</li>
+        <li>Make sure you have a stable internet connection</li>
+      </ol>
+      <p>If the problem persists, please email <a href="mailto:karabetskiy.d@gmail.com">karabetskiy.d@gmail.com</a> with a description of what happened and your device model. Screenshots are very helpful.</p>
+    </div>
+  </details>
+</main>
+
+<footer>
+  <div class="footer-links">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Use</a>
+    <a href="index.html">Support</a>
+  </div>
+  <p>© 2025 Dmitriy Karabetskiy. Unclause is not a law firm and does not provide legal advice.</p>
+</footer>
+
+</body>
+</html>
