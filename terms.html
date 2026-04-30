@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unclause — Terms of Use</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f0f14;
+    --bg: #f7f6f2;
+    --accent: #2a5cff;
+    --muted: #7a7a8a;
+    --card: #ffffff;
+    --border: #e8e6e0;
+    --radius: 16px;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(247,246,242,0.88);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+  }
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800; font-size: 1.25rem;
+    color: var(--ink); text-decoration: none;
+    letter-spacing: -0.02em;
+  }
+  .nav-logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.875rem; font-weight: 500;
+    color: var(--muted); text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--ink); }
+
+  .page-header {
+    max-width: 720px; margin: 0 auto;
+    padding: 72px 2rem 48px;
+  }
+  .page-tag {
+    display: inline-block;
+    font-family: 'Syne', sans-serif;
+    font-size: 0.7rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--accent);
+    border: 1.5px solid var(--accent);
+    border-radius: 999px;
+    padding: 4px 14px; margin-bottom: 20px;
+  }
+  .page-header h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800; line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 16px;
+  }
+  .page-header .meta {
+    font-size: 0.875rem; color: var(--muted); font-weight: 300;
+  }
+
+  .doc-body {
+    max-width: 720px; margin: 0 auto;
+    padding: 0 2rem 80px;
+  }
+
+  .toc {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin-bottom: 40px;
+  }
+  .toc-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700; font-size: 0.8rem;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 14px;
+  }
+  .toc ol { padding-left: 20px; }
+  .toc li { margin-bottom: 6px; }
+  .toc a {
+    color: var(--accent); text-decoration: none;
+    font-size: 0.9rem;
+  }
+  .toc a:hover { text-decoration: underline; }
+
+  .doc-section { margin-bottom: 44px; }
+  .doc-section h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.3rem; font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+    padding-top: 8px;
+    border-top: 2px solid var(--accent);
+    display: inline-block;
+  }
+  .doc-section p { margin-bottom: 14px; color: #3a3a4a; font-weight: 300; }
+  .doc-section ul, .doc-section ol {
+    padding-left: 22px; margin-bottom: 14px;
+  }
+  .doc-section li { margin-bottom: 8px; color: #3a3a4a; font-weight: 300; }
+  .doc-section strong { font-weight: 500; color: var(--ink); }
+  .doc-section a { color: var(--accent); }
+
+  .warning-box {
+    background: #fff8f0;
+    border-left: 3px solid #ff8c00;
+    border-radius: 0 12px 12px 0;
+    padding: 18px 22px;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+  }
+  .warning-box p { margin-bottom: 0; color: #5a3800; }
+
+  .highlight-box {
+    background: #eef2ff;
+    border-left: 3px solid var(--accent);
+    border-radius: 0 12px 12px 0;
+    padding: 18px 22px;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+  }
+  .highlight-box p { margin-bottom: 0; color: #2a3a6a; }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 32px 2rem;
+    text-align: center;
+    font-size: 0.8rem; color: var(--muted);
+  }
+  footer a { color: var(--muted); text-decoration: underline; }
+  footer a:hover { color: var(--ink); }
+  .footer-links { display: flex; gap: 2rem; justify-content: center; margin-bottom: 12px; flex-wrap: wrap; }
+
+  @media (max-width: 600px) {
+    .nav-links { display: none; }
+    .page-header { padding: 48px 1.5rem 32px; }
+    .doc-body { padding: 0 1.5rem 60px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">Uncl<span>au</span>se</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Support</a></li>
+    <li><a href="privacy.html">Privacy</a></li>
+    <li><a href="terms.html">Terms</a></li>
+  </ul>
+</nav>
+
+<div class="page-header">
+  <div class="page-tag">Legal</div>
+  <h1>Terms of Use</h1>
+  <p class="meta">Effective date: January 1, 2025 &nbsp;·&nbsp; Developer: Dmitriy Karabetskiy</p>
+</div>
+
+<div class="doc-body">
+
+  <div class="toc">
+    <div class="toc-title">Contents</div>
+    <ol>
+      <li><a href="#acceptance">Acceptance of Terms</a></li>
+      <li><a href="#description">Description of Service</a></li>
+      <li><a href="#not-legal-advice">Not Legal Advice</a></li>
+      <li><a href="#eligibility">Eligibility</a></li>
+      <li><a href="#credits">Credits and Payments</a></li>
+      <li><a href="#acceptable-use">Acceptable Use</a></li>
+      <li><a href="#intellectual-property">Intellectual Property</a></li>
+      <li><a href="#disclaimer">Disclaimer of Warranties</a></li>
+      <li><a href="#liability">Limitation of Liability</a></li>
+      <li><a href="#termination">Termination</a></li>
+      <li><a href="#governing-law">Governing Law</a></li>
+      <li><a href="#changes">Changes to Terms</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ol>
+  </div>
+
+  <div class="doc-section" id="acceptance">
+    <h2>1. Acceptance of Terms</h2>
+    <p>By downloading, installing, or using Unclause ("the App"), you agree to be bound by these Terms of Use ("Terms"). If you do not agree to these Terms, do not use the App.</p>
+    <p>These Terms constitute a legally binding agreement between you and Dmitriy Karabetskiy ("Developer", "we", "us"), the individual developer of Unclause.</p>
+  </div>
+
+  <div class="doc-section" id="description">
+    <h2>2. Description of Service</h2>
+    <p>Unclause is an iOS application that uses artificial intelligence to analyze contracts and legal documents. The App allows users to upload contracts via photo, PDF, or text, and receive automated analysis including risk identification, clause summaries, and suggested revisions.</p>
+    <p>The App uses Anthropic's Claude AI model to process contract content. Analysis quality depends on the clarity and completeness of the document provided.</p>
+  </div>
+
+  <div class="doc-section" id="not-legal-advice">
+    <h2>3. Not Legal Advice</h2>
+    <div class="warning-box">
+      <p><strong>Important:</strong> Unclause is not a law firm and does not provide legal advice. The analysis generated by the App is for informational purposes only and does not constitute legal advice, legal opinion, or attorney-client relationship of any kind.</p>
+    </div>
+    <p>You should not rely solely on the App's output when making legal or business decisions. For matters of legal significance, always consult a qualified attorney licensed in your jurisdiction.</p>
+    <p>The Developer is not responsible for any decisions made based on the App's analysis.</p>
+  </div>
+
+  <div class="doc-section" id="eligibility">
+    <h2>4. Eligibility</h2>
+    <p>You must be at least 17 years of age to use Unclause (as required by the App Store rating). By using the App, you represent that you meet this age requirement.</p>
+    <p>The App is intended for personal and professional use by individuals. Use by automated systems or bots is not permitted.</p>
+  </div>
+
+  <div class="doc-section" id="credits">
+    <h2>5. Credits and Payments</h2>
+    <p>Unclause uses a credit-based system to access analysis features:</p>
+    <ul>
+      <li>New users receive <strong>2 free credits</strong> upon first launch</li>
+      <li>Additional credits can be purchased through in-app purchases processed by Apple's App Store</li>
+      <li>Credits are consumed per analysis, based on document length</li>
+      <li>Credits that fail to produce a result due to a technical error are automatically refunded</li>
+      <li>Credits have no cash value and are non-transferable</li>
+    </ul>
+    <p><strong>Refunds:</strong> All purchases are processed by Apple. Refund requests must be submitted through Apple's standard refund process at <a href="https://reportaproblem.apple.com" target="_blank">reportaproblem.apple.com</a>. The Developer cannot process refunds directly.</p>
+  </div>
+
+  <div class="doc-section" id="acceptable-use">
+    <h2>6. Acceptable Use</h2>
+    <p>You agree not to use the App to:</p>
+    <ul>
+      <li>Upload content that is illegal, harmful, or violates the rights of others</li>
+      <li>Attempt to reverse-engineer, decompile, or extract the App's source code</li>
+      <li>Use the App for any purpose other than personal or professional contract review</li>
+      <li>Circumvent or attempt to circumvent the credit system</li>
+      <li>Transmit malicious code or interfere with the App's operation</li>
+      <li>Resell or sublicense access to the App or its AI analysis output</li>
+    </ul>
+  </div>
+
+  <div class="doc-section" id="intellectual-property">
+    <h2>7. Intellectual Property</h2>
+    <p>The App, including its design, code, branding, and content (excluding user-uploaded contracts), is the property of Dmitriy Karabetskiy and is protected by applicable intellectual property laws.</p>
+    <p>You retain all rights to the contracts and documents you upload. By submitting content for analysis, you grant the App a temporary, limited license to process that content solely for the purpose of generating your analysis report.</p>
+    <p>The AI-generated analysis reports are provided to you for your personal use. You may share or use them as you see fit, but you may not represent them as formal legal opinions.</p>
+  </div>
+
+  <div class="doc-section" id="disclaimer">
+    <h2>8. Disclaimer of Warranties</h2>
+    <p>The App is provided <strong>"as is"</strong> and <strong>"as available"</strong> without warranties of any kind, either express or implied, including but not limited to:</p>
+    <ul>
+      <li>Accuracy or completeness of AI-generated analysis</li>
+      <li>Fitness for a particular legal purpose</li>
+      <li>Uninterrupted or error-free operation</li>
+      <li>Compatibility with all devices or iOS versions</li>
+    </ul>
+    <p>AI analysis may contain errors, omissions, or inaccuracies. Always verify important clauses independently.</p>
+  </div>
+
+  <div class="doc-section" id="liability">
+    <h2>9. Limitation of Liability</h2>
+    <p>To the maximum extent permitted by applicable law, the Developer shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to:</p>
+    <ul>
+      <li>Losses arising from reliance on the App's analysis</li>
+      <li>Business losses, loss of profits, or loss of contracts</li>
+      <li>Data loss or corruption</li>
+      <li>Any damages arising from third-party services (including Anthropic's API)</li>
+    </ul>
+    <p>The Developer's total liability to you for any claim arising from use of the App shall not exceed the amount you paid for credits in the 90 days preceding the claim.</p>
+  </div>
+
+  <div class="doc-section" id="termination">
+    <h2>10. Termination</h2>
+    <p>We reserve the right to suspend or terminate access to the App at any time, with or without notice, if we reasonably believe you have violated these Terms.</p>
+    <p>You may stop using the App at any time. Unused credits are non-refundable upon termination, except as required by applicable law.</p>
+  </div>
+
+  <div class="doc-section" id="governing-law">
+    <h2>11. Governing Law</h2>
+    <p>These Terms are governed by and construed in accordance with applicable law. Any disputes arising from these Terms or your use of the App shall be resolved through good-faith negotiation where possible.</p>
+    <p>Nothing in these Terms affects your rights as a consumer under applicable mandatory consumer protection laws in your country of residence.</p>
+  </div>
+
+  <div class="doc-section" id="changes">
+    <h2>12. Changes to Terms</h2>
+    <p>We may update these Terms from time to time. When we do, we will update the effective date at the top of this page. Continued use of the App after changes constitutes your acceptance of the revised Terms.</p>
+    <p>For material changes, we will make reasonable efforts to notify users through the App.</p>
+  </div>
+
+  <div class="doc-section" id="contact">
+    <h2>13. Contact</h2>
+    <p>If you have questions about these Terms, please contact us:</p>
+    <p><strong>Email:</strong> <a href="mailto:karabetskiy.d@gmail.com">karabetskiy.d@gmail.com</a><br>
+    <strong>Developer:</strong> Dmitriy Karabetskiy</p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Use</a>
+    <a href="index.html">Support</a>
+  </div>
+  <p>© 2025 Dmitriy Karabetskiy. Unclause is not a law firm and does not provide legal advice.</p>
+</footer>
+
+</body>
+</html>

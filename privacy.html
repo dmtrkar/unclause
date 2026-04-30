@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unclause — Privacy Policy</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f0f14;
+    --bg: #f7f6f2;
+    --accent: #2a5cff;
+    --muted: #7a7a8a;
+    --card: #ffffff;
+    --border: #e8e6e0;
+    --radius: 16px;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(247,246,242,0.88);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+  }
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800; font-size: 1.25rem;
+    color: var(--ink); text-decoration: none;
+    letter-spacing: -0.02em;
+  }
+  .nav-logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.875rem; font-weight: 500;
+    color: var(--muted); text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--ink); }
+
+  .page-header {
+    max-width: 720px; margin: 0 auto;
+    padding: 72px 2rem 48px;
+  }
+  .page-tag {
+    display: inline-block;
+    font-family: 'Syne', sans-serif;
+    font-size: 0.7rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--accent);
+    border: 1.5px solid var(--accent);
+    border-radius: 999px;
+    padding: 4px 14px; margin-bottom: 20px;
+  }
+  .page-header h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800; line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 16px;
+  }
+  .page-header .meta {
+    font-size: 0.875rem; color: var(--muted); font-weight: 300;
+  }
+
+  .doc-body {
+    max-width: 720px; margin: 0 auto;
+    padding: 0 2rem 80px;
+  }
+
+  .toc {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin-bottom: 40px;
+  }
+  .toc-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700; font-size: 0.8rem;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 14px;
+  }
+  .toc ol { padding-left: 20px; }
+  .toc li { margin-bottom: 6px; }
+  .toc a {
+    color: var(--accent); text-decoration: none;
+    font-size: 0.9rem; font-weight: 400;
+  }
+  .toc a:hover { text-decoration: underline; }
+
+  .doc-section {
+    margin-bottom: 44px;
+  }
+  .doc-section h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.3rem; font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+    padding-top: 8px;
+    border-top: 2px solid var(--accent);
+    display: inline-block;
+  }
+  .doc-section p { margin-bottom: 14px; color: #3a3a4a; font-weight: 300; }
+  .doc-section ul, .doc-section ol {
+    padding-left: 22px; margin-bottom: 14px;
+  }
+  .doc-section li { margin-bottom: 8px; color: #3a3a4a; font-weight: 300; }
+  .doc-section strong { font-weight: 500; color: var(--ink); }
+  .doc-section a { color: var(--accent); }
+
+  .highlight-box {
+    background: #eef2ff;
+    border-left: 3px solid var(--accent);
+    border-radius: 0 12px 12px 0;
+    padding: 18px 22px;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+  }
+  .highlight-box p { margin-bottom: 0; color: #2a3a6a; }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 32px 2rem;
+    text-align: center;
+    font-size: 0.8rem; color: var(--muted);
+  }
+  footer a { color: var(--muted); text-decoration: underline; }
+  footer a:hover { color: var(--ink); }
+  .footer-links { display: flex; gap: 2rem; justify-content: center; margin-bottom: 12px; flex-wrap: wrap; }
+
+  @media (max-width: 600px) {
+    .nav-links { display: none; }
+    .page-header { padding: 48px 1.5rem 32px; }
+    .doc-body { padding: 0 1.5rem 60px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">Uncl<span>au</span>se</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Support</a></li>
+    <li><a href="privacy.html">Privacy</a></li>
+    <li><a href="terms.html">Terms</a></li>
+  </ul>
+</nav>
+
+<div class="page-header">
+  <div class="page-tag">Legal</div>
+  <h1>Privacy Policy</h1>
+  <p class="meta">Effective date: January 1, 2025 &nbsp;·&nbsp; Developer: Dmitriy Karabetskiy</p>
+</div>
+
+<div class="doc-body">
+
+  <div class="toc">
+    <div class="toc-title">Contents</div>
+    <ol>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#data-collected">Information We Collect</a></li>
+      <li><a href="#data-not-collected">Information We Do Not Collect</a></li>
+      <li><a href="#third-parties">Third-Party Services</a></li>
+      <li><a href="#icloud">iCloud Sync</a></li>
+      <li><a href="#analytics">Analytics</a></li>
+      <li><a href="#children">Children's Privacy</a></li>
+      <li><a href="#changes">Changes to This Policy</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ol>
+  </div>
+
+  <div class="doc-section" id="overview">
+    <h2>1. Overview</h2>
+    <div class="highlight-box">
+      <p><strong>Short version:</strong> Your contracts never leave your device to our servers. We do not sell your data. We do not store your documents.</p>
+    </div>
+    <p>This Privacy Policy describes how Unclause ("the App", "we", "our") handles your information when you use our iOS application. We are committed to protecting your privacy and being transparent about our data practices.</p>
+    <p>Unclause is developed and operated by Dmitriy Karabetskiy ("Developer", "I"). By using the App, you agree to the practices described in this policy.</p>
+  </div>
+
+  <div class="doc-section" id="data-collected">
+    <h2>2. Information We Collect</h2>
+    <p>We collect only the minimum information necessary to provide the service:</p>
+    <ul>
+      <li><strong>Contract text for analysis:</strong> When you submit a contract for analysis, the text content is transmitted to Anthropic's API to generate your report. This transmission is encrypted. Anthropic's data handling is governed by their own privacy policy. The contract text is not stored on our servers.</li>
+      <li><strong>App usage analytics:</strong> We collect anonymous, non-identifiable usage data (e.g., which features are used, how often analyses are performed) via PostHog. This data cannot be linked to you personally and is used solely to improve the app.</li>
+      <li><strong>Purchase information:</strong> In-app purchases are processed entirely by Apple's App Store. We receive confirmation that a purchase was made (to credit your account), but we never see your payment details.</li>
+    </ul>
+  </div>
+
+  <div class="doc-section" id="data-not-collected">
+    <h2>3. Information We Do Not Collect</h2>
+    <ul>
+      <li>We do <strong>not</strong> collect your name, email address, or any account information</li>
+      <li>We do <strong>not</strong> store copies of your contracts or documents on our servers</li>
+      <li>We do <strong>not</strong> access your camera roll, contacts, or any other device data beyond what you explicitly share with the app</li>
+      <li>We do <strong>not</strong> track your location</li>
+      <li>We do <strong>not</strong> sell or share your data with advertisers</li>
+      <li>We do <strong>not</strong> use your data to train AI models</li>
+    </ul>
+  </div>
+
+  <div class="doc-section" id="third-parties">
+    <h2>4. Third-Party Services</h2>
+    <p>Unclause uses the following third-party services:</p>
+    <ul>
+      <li><strong>Anthropic API</strong> — Processes contract text to generate analysis reports. Anthropic's privacy policy is available at <a href="https://www.anthropic.com/privacy" target="_blank">anthropic.com/privacy</a>.</li>
+      <li><strong>Apple App Store / StoreKit</strong> — Handles all in-app purchases and payment processing.</li>
+      <li><strong>Apple CloudKit</strong> — Optionally syncs your report history across your own Apple devices. Data is stored in your personal iCloud account and is not accessible to us.</li>
+      <li><strong>PostHog</strong> — Provides anonymous, aggregated analytics. No personally identifiable information is transmitted.</li>
+    </ul>
+  </div>
+
+  <div class="doc-section" id="icloud">
+    <h2>5. iCloud Sync</h2>
+    <p>If you have iCloud enabled on your device, your analysis reports and history may be synced across your Apple devices using Apple's CloudKit infrastructure. This data is stored in <strong>your personal iCloud account</strong>. We cannot access, read, or modify your iCloud data. You can disable iCloud sync for Unclause at any time in your iOS Settings.</p>
+  </div>
+
+  <div class="doc-section" id="analytics">
+    <h2>6. Analytics</h2>
+    <p>We use PostHog to collect anonymous analytics about how the app is used. This helps us understand which features are valuable and where we should improve. The data collected is:</p>
+    <ul>
+      <li>Fully anonymous — no user identity is attached</li>
+      <li>Aggregated — we see trends, not individual sessions</li>
+      <li>Not sold or shared with any third party for marketing purposes</li>
+    </ul>
+    <p>You can opt out of analytics in the App's Settings screen.</p>
+  </div>
+
+  <div class="doc-section" id="children">
+    <h2>7. Children's Privacy</h2>
+    <p>Unclause is not directed at children under the age of 13. We do not knowingly collect personal information from children. If you believe a child has provided us with personal information, please contact us and we will delete it promptly.</p>
+  </div>
+
+  <div class="doc-section" id="changes">
+    <h2>8. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. When we do, we will update the effective date at the top of this page. We encourage you to review this policy periodically. Continued use of the App after changes constitutes your acceptance of the updated policy.</p>
+  </div>
+
+  <div class="doc-section" id="contact">
+    <h2>9. Contact</h2>
+    <p>If you have any questions about this Privacy Policy or how your data is handled, please contact us:</p>
+    <p><strong>Email:</strong> <a href="mailto:karabetskiy.d@gmail.com">karabetskiy.d@gmail.com</a><br>
+    <strong>Developer:</strong> Dmitriy Karabetskiy</p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Use</a>
+    <a href="index.html">Support</a>
+  </div>
+  <p>© 2025 Dmitriy Karabetskiy. Unclause is not a law firm and does not provide legal advice.</p>
+</footer>
+
+</body>
+</html>
